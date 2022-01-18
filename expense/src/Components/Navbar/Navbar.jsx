@@ -4,7 +4,7 @@ import { OuterLayout } from "../../Layout/Layout";
 // import logo from "./img/GSW.svg";
 import logo from "./img/slack.svg";
 import { Hash } from "react-feather";
-
+import { Link } from "react-router-dom";
 // import { useGlobalContext } from "../../Context/context.js";
 import Hamburger from "./Hamburger/Hamburger";
 const Navbar = () => {
@@ -47,7 +47,9 @@ const Navbar = () => {
       <OuterLayout>
         <div className="navigation">
           <div className="logo">
-            <img src={logo} alt="" />
+            <Link to="/">
+              <img src={logo} alt="" />
+            </Link>
           </div>
 
           <div className="hashtag">

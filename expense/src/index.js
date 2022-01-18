@@ -9,13 +9,13 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <>
+    <div>
       <GlobalStyle />
       <CustomCursor />
       <Router>
         <App />
       </Router>
-    </>
+    </div>
   </React.StrictMode>,
   document.getElementById("root")
 );

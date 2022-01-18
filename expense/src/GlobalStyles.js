@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     font-size:100%;
     scroll-behavior:smooth;
-    color: #0f2137;
+    /* color: #0f2137; */
  
 
     /* font-size:1vw; */

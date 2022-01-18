@@ -23,7 +23,7 @@ const CustomRoute = ({ children }) => {
 
   useEffect(() => {
     setProgress(false);
-  }, []);
+  }, [prevLoc]);
   return (
     <>
       {progress && <TopBarProgress />}
