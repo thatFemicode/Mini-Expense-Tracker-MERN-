@@ -6,16 +6,17 @@ import reportWebVitals from "./reportWebVitals";
 import GlobalStyle from "./GlobalStyles";
 import CustomCursor from "./Components/CustomCursor/CustomCursor";
 import { BrowserRouter as Router } from "react-router-dom";
+import { GlobalProvider } from "./Context/Context";
 
 ReactDOM.render(
   <React.StrictMode>
-    <div>
+    <GlobalProvider>
       <GlobalStyle />
       <CustomCursor />
       <Router>
         <App />
       </Router>
-    </div>
+    </GlobalProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

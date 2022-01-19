@@ -4,7 +4,7 @@
 const Transactions = require("../Model/Transaction");
 
 // Function to get Transactions
-const getTransactions = async (req, res, next) => {
+const getTransactions = async (req, res) => {
   try {
     const transactions = await Transaction.find();
 
@@ -20,7 +20,7 @@ const getTransactions = async (req, res, next) => {
     });
   }
 };
-const addTransactions = async (req, res, next) => {
+const addTransactions = async (req, res) => {
   try {
     const { text, amount } = req.body;
 
@@ -46,7 +46,7 @@ const addTransactions = async (req, res, next) => {
     }
   }
 };
-const deleteTransactions = async (req, res, next) => {
+const deleteTransactions = async (req, res) => {
   try {
     const transaction = await Transaction.findById(req.params.id);
 
@@ -74,5 +74,4 @@ module.exports = {
   getTransactions,
   addTransactions,
   deleteTransactions,
-
 };
