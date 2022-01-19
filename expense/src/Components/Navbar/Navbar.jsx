@@ -53,9 +53,7 @@ const Navbar = () => {
           </div>
 
           <div className="hashtag">
-            <button onClick={handleMenu} disabled={disabled}>
-              <Hash /> {state.menuName}
-            </button>
+            <Link to="dashboard">DashBoard</Link>
           </div>
           {/* <Buttons clicked={isSidebarOpen} onClick={openSidebar} /> */}
         </div>

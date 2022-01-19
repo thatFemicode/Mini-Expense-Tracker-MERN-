@@ -40,36 +40,25 @@ const Home = () => {
       y: 200,
       ease: "power3.inOut",
     })
-      .fromTo(
+      .from(
         text1.current,
-        { opacity: 0, x: 200, skewY: 10, ease: "power3.inOut" },
-        { duration: 2, x: 0, opacity: 1, skewY: 0 },
+        { duration: 2, opacity: 0, x: 200, skewY: 10, ease: "power3.inOut" },
+
         "-=1"
       )
-      .fromTo(
+      .from(
         text2.current,
         {
+          duration: 2,
           opacity: 0,
           x: -200,
           skewY: 10,
           ease: "power3.inOut",
         },
-        { duration: 2, x: 0, opacity: 1, skewY: 0 },
-        "-=1"
-      )
-      .fromTo(
-        text3.current,
-        {
-          opacity: 0,
-          x: 200,
-          skewY: 10,
-          ease: "power3.inOut",
-        },
-        { duration: 2, x: 0, opacity: 1, skewY: 0 },
         "-=1"
       )
       .from(
-        link.current,
+        text3.current,
         {
           duration: 2,
           opacity: 0,
@@ -77,7 +66,19 @@ const Home = () => {
           skewY: 10,
           ease: "power3.inOut",
         },
-        "-=2"
+
+        "-=1"
+      )
+      .from(
+        link.current,
+        {
+          duration: 3,
+          opacity: 0,
+          x: 200,
+          skewY: 10,
+          ease: "power3.inOut",
+        },
+        "-=1"
       )
       .from(
         hand.current,
@@ -90,7 +91,7 @@ const Home = () => {
         },
         "-=1"
       );
-  }, []);
+  }, [tl]);
   return (
     <HomeStyled>
       <OuterLayout>
@@ -109,12 +110,14 @@ const Home = () => {
               Tracker
             </h1>
             <img ref={hand} className="hand" src={Hand} alt="hand" />
-            <img ref={image} className="logo" src={logo} alt="hand" />
             <Link ref={link} to="/dashboard">
               <span className="view">View Dashboard</span>
               <span className="track">Track your expenses today</span>
             </Link>
           </div>
+        </div>
+        <div className="scroll">
+          <img ref={image} src={logo} alt="75anniversary" />
         </div>
       </OuterLayout>
     </HomeStyled>
