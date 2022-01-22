@@ -6,6 +6,12 @@ import {
   delTransaction,
 } from "../api/index";
 import { transactionReducer } from "./appReducer";
+import {
+  GET_TRANSACTIONS,
+  ADD_TRANSACTION,
+  DELETE_TRANSACTION,
+  TRANSACTION_ERROR,
+} from "./constant";
 
 // Initial state
 const initialState = {
@@ -24,35 +30,28 @@ export const GlobalProvider = ({ children }) => {
   async function getTransactions() {
     try {
       const res = await fetchTransactions();
-
       dispatch({
-        type: "GET_TRANSACTIONS",
+        type: GET_TRANSACTIONS,
         payload: res.data.data,
       });
     } catch (err) {
       dispatch({
-        type: "TRANSACTION_ERROR",
+        type: TRANSACTION_ERROR,
         payload: err.data.data.error,
       });
     }
   }
 
   async function addTransaction(transaction) {
-    const config = {
-      header: {
-        "Content-Type": "application/json",
-      },
-    };
-
     try {
-      const res = await createTransaction(transaction, config);
+      const res = await createTransaction(transaction);
       dispatch({
-        type: "ADD_TRANSACTION",
+        type: ADD_TRANSACTION,
         payload: res.data.data,
       });
     } catch (err) {
       dispatch({
-        type: "TRANSACTION_ERROR",
+        type: TRANSACTION_ERROR,
         payload: err.response.data.error,
       });
     }
@@ -62,12 +61,12 @@ export const GlobalProvider = ({ children }) => {
     try {
       await delTransaction(id);
       dispatch({
-        type: "DELETE_TRANSACTION",
+        type: DELETE_TRANSACTION,
         payload: id,
       });
     } catch (err) {
       dispatch({
-        type: "TRANSACTION_ERROR",
+        type: TRANSACTION_ERROR,
         payload: err.response.data.error,
       });
     }

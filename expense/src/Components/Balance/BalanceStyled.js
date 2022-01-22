@@ -15,6 +15,9 @@ export const BalanceStyled = styled.div`
     padding: 30px;
     cursor: pointer;
     overflow: hidden;
+    @media (max-width: ${({ theme }) => theme.dont}) {
+      max-width: 650px;
+    }
   }
 
   .container .logo {
@@ -22,6 +25,9 @@ export const BalanceStyled = styled.div`
     position: absolute;
     right: 30px;
     top: 45px;
+    @media (max-width: ${({ theme }) => theme.dont}) {
+      right: 40px;
+    }
   }
 
   .container .card-name {

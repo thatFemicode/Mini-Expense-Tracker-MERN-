@@ -32,11 +32,10 @@ const Balance = () => {
     );
   }, [watch]);
   const amounts = transactions.map((transaction) => transaction.amount);
-  const total = amounts
-    .reduce((acc, item) => (acc += item), 0)
-    .toFixed(2)
-    .toString()
-    .replace(".", ",");
+
+  const getTotalBalance = () => {
+    return amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
+  };
   const currency = (val, locale, currency) => {
     return new Intl.NumberFormat(locale, {
       style: "currency",
@@ -61,7 +60,7 @@ const Balance = () => {
           Balance
         </p>
         <h1 ref={balance} className="card-balance">
-          {currency(total, "en-NG", "NGN")}
+          {currency(getTotalBalance(), "en-NG", "NGN")}
         </h1>
         <img ref={logo} className="logo" src={ring} alt="" />
         <p ref={number} className="card-number">
