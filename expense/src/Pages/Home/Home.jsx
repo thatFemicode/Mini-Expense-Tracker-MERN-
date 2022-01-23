@@ -6,7 +6,7 @@ import Hand from "./img/Hand.png";
 import logo from "./img/slack.svg";
 import anime from "animejs";
 import { Link } from "react-router-dom";
-import { gsap } from "gsap";
+
 import animate from "./animation";
 
 const Home = () => {

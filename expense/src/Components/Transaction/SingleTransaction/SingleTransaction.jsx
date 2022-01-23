@@ -39,9 +39,7 @@ const SingleTransaction = ({ transaction }) => {
     <SingleTransactionStyled className="single">
       <List transactions={transaction.amount}>
         <div className="transaction-container">
-          <p className="transaction-text">
-          {transaction.text}
-          </p>
+          <p className="transaction-text">{transaction.text}</p>
           <p className="transaction-date">{formatDate(now)}</p>
         </div>
         <span>{currency(transaction.amount, "en-NG", "NGN")}</span>

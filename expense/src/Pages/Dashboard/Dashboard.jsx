@@ -3,7 +3,6 @@ import Balance from "../../Components/Balance/Balance";
 import Expense from "../../Components/Income-Expense/Expense/Expense";
 import Income from "../../Components/Income-Expense/Income/Income";
 import AddTransaction from "../../Components/Transaction/AddTransaction/AddTransaction";
-import SingleTransaction from "../../Components/Transaction/SingleTransaction/SingleTransaction";
 import TransactionList from "../../Components/Transaction/TransactionList/TransactionList";
 import { OuterLayout } from "../../Layout/Layout";
 import { DashBoardStyled } from "./DashBoardStyled";
