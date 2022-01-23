@@ -17,7 +17,7 @@ const Balance = () => {
   const number = useRef(null);
   const date = useRef(null);
   const { transactions } = useContext(GlobalContext);
-  console.log(transactions);
+  // console.log(transactions);
   useEffect(() => {
     animate(
       container.current,
