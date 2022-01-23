@@ -18,7 +18,7 @@ const Income = () => {
   return (
     <IncomeStyled>
       <div className="container">
-        <p className="card-name">Expense</p>
+        <p className="card-name">Income</p>
         <h1 className="card-balance">{currency(income, "en-NG", "NGN")}</h1>
         <img className="logo" src={ring} alt="" />
       </div>

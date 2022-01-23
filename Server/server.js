@@ -9,10 +9,10 @@ const bodyParser = require("body-parser");
 const connectDB = require("./config/db");
 const transactionRoute = require("./Routes/Transaction");
 const cors = require("cors");
+
+connectDB();
 app.use(cors());
 app.use(bodyParser.json());
-connectDB();
-
 // Dev Logginf Middleware
 if (process.env.NODE_ENV === "development") {
   app.use(
@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 app.get("/", (rer, res) => {
-  res.send("Morgan Logger App");
+  res.send("expense backend is running");
 });
 
 app.use("/transactions", transactionRoute);

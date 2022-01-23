@@ -15,7 +15,7 @@ export const DashBoardStyled = styled.main`
     .sidebar {
       display: flex;
       flex-direction: column;
-      height: 70vh;
+      height: 60vh;
       align-items: center;
       padding: 20px 0;
       flex: 30%;
@@ -25,11 +25,19 @@ export const DashBoardStyled = styled.main`
       &::-webkit-scrollbar {
         display: none;
       }
+
       @media (max-width: ${({ theme }) => theme.desktop}) {
         flex: unset;
-        height: 37vh;
+        height: 21vh;
         overflow: auto;
       }
+      @media screen and (min-height: 900px) and (max-height: 1024px) and (max-width: 768px) {
+        height: 180px;
+      }
+      @media (max-width: ${({ theme }) => theme.max}) {
+        height: 180px;
+      }
+
       .inc-exp {
         margin-top: 3rem;
       }
@@ -50,7 +58,10 @@ export const DashBoardStyled = styled.main`
         flex: unset;
         margin-top: 5rem;
         overflow: auto;
-        height: 30vh;
+        height: 50vh;
+      }
+      @media (max-width: ${({ theme }) => theme.max}) {
+        height: 40vh;
       }
       /* padding-top: 5rem; */
     }

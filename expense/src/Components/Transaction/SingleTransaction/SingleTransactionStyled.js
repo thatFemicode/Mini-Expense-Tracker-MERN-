@@ -13,17 +13,28 @@ export const List = styled.li`
   margin: 10px 0;
   border-right: ${({ transactions }) =>
     transactions < 0 ? " 5px solid #ff5e57" : "5px solid #0be881"};
-
+  span {
+    @media (max-width: ${({ theme }) => theme.se}) {
+      font-size: 0.9rem;
+    }
+  }
   .transaction-container {
     display: flex;
     flex-direction: column;
     text-align: left;
-
+    .transaction-text {
+      @media (max-width: ${({ theme }) => theme.se}) {
+        font-size: 0.9rem;
+      }
+    }
     .transaction-date {
       font-size: 12px;
       text-transform: uppercase;
       font-weight: bold;
       padding-top: 10px;
+      @media (max-width: ${({ theme }) => theme.se}) {
+        font-size: 9px;
+      }
     }
   }
   .delete-btn {

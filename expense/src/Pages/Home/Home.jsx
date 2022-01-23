@@ -7,24 +7,23 @@ import logo from "./img/slack.svg";
 import anime from "animejs";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
+import animate from "./animation";
+
 const Home = () => {
-  const image = useRef(null);
-  const text1 = useRef(null);
-  const text2 = useRef(null);
-  const text3 = useRef(null);
-  const human = useRef(null);
-  const link = useRef(null);
-  const hand = useRef(null);
-  const tl = gsap.timeline();
+  let image = useRef(null);
+  let text1 = useRef(null);
+  let text2 = useRef(null);
+  let text3 = useRef(null);
+  let human = useRef(null);
+  let link = useRef(null);
+  let hand = useRef(null);
+  let demo = useRef(null);
+
   useEffect(() => {
     anime({
       targets: image.current,
       rotateY: 360,
-      // keyframes: [{ rotate: 0 }, { rotate: 30 }, { rotate: 0 }],
-      // translateY: 400,
-      // duration: 400,
-      // scale: 2,
-      // easing: 'linear',
+
       duration: 1500,
       endDelay: 300,
       scale: 0.5,
@@ -34,83 +33,32 @@ const Home = () => {
     });
   }, []);
   useEffect(() => {
-    tl.from(human.current, {
-      duration: 2,
-      opacity: 0,
-      y: 200,
-      ease: "power3.inOut",
-    })
-      .from(
-        text1.current,
-        { duration: 2, opacity: 0, x: 200, skewY: 10, ease: "power3.inOut" },
-
-        "-=1"
-      )
-      .from(
-        text2.current,
-        {
-          duration: 2,
-          opacity: 0,
-          x: -200,
-          skewY: 10,
-          ease: "power3.inOut",
-        },
-        "-=1"
-      )
-      .from(
-        text3.current,
-        {
-          duration: 2,
-          opacity: 0,
-          x: 200,
-          skewY: 10,
-          ease: "power3.inOut",
-        },
-
-        "-=1"
-      )
-      .from(
-        link.current,
-        {
-          duration: 3,
-          opacity: 0,
-          x: 200,
-          skewY: 10,
-          ease: "power3.inOut",
-        },
-        "-=1"
-      )
-      .from(
-        hand.current,
-        {
-          duration: 2,
-          opacity: 0,
-          y: 200,
-          skewY: 10,
-          ease: "power3.inOut",
-        },
-        "-=1"
-      );
-  }, [tl]);
+    animate(human, text1, text2, text3, link, hand, demo);
+  }, []);
   return (
-    <HomeStyled>
+    <HomeStyled ref={(el) => (demo = el)}>
       <OuterLayout>
         <div className="hero">
           <div className="hero-left">
-            <img ref={human} src={Human} alt="human" />
+            <img ref={(el) => (human = el)} src={Human} alt="human" />
           </div>
           <div className="hero-right">
-            <h1 ref={text1} className="text express">
+            <h1 ref={(el) => (text1 = el)} className="text express">
               Express
             </h1>
-            <h1 ref={text2} className="text expense">
+            <h1 ref={(el) => (text2 = el)} className="text expense">
               Expense
             </h1>
-            <h1 ref={text3} className="text tracker">
+            <h1 ref={(el) => (text3 = el)} className="text tracker">
               Tracker
             </h1>
-            <img ref={hand} className="hand" src={Hand} alt="hand" />
-            <Link ref={link} to="/dashboard">
+            <img
+              ref={(el) => (hand = el)}
+              className="hand"
+              src={Hand}
+              alt="hand"
+            />
+            <Link ref={(el) => (link = el)} to="/dashboard">
               <span className="view">View Dashboard</span>
               <span className="track">Track your expenses today</span>
             </Link>

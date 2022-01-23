@@ -4,6 +4,7 @@ export const HomeStyled = styled.main`
   overflow: hidden;
   padding-top: 8rem;
   position: relative;
+  visibility: hidden;
   @media (max-width: ${({ theme }) => theme.desktop}) {
     padding-top: 10rem;
   }
@@ -257,7 +258,8 @@ export const HomeStyled = styled.main`
         /* width: 60%; */
         .view {
           border-radius: 1.5rem;
-          background-color: rgba(0, 85, 186, 1);
+          /* background-color: rgba(0, 85, 186, 1); */
+          background: linear-gradient(to right bottom, #323941, #061018);
           padding-left: 0.75rem;
           padding-right: 0.75rem;
           color: #fff;

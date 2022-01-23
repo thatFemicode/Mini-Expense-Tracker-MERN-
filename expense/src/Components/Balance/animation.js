@@ -9,7 +9,6 @@ const animate = (node1, node2, node3, node4, node5, node6, node7) => {
     },
     0
   )
-
     .to(
       node2,
       {
@@ -29,7 +28,6 @@ const animate = (node1, node2, node3, node4, node5, node6, node7) => {
       },
       0.5
     )
-
     .to(
       node4,
       {
@@ -40,7 +38,6 @@ const animate = (node1, node2, node3, node4, node5, node6, node7) => {
       },
       0.5
     )
-
     .to(
       node5,
       {

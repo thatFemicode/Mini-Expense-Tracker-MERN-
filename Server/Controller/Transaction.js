@@ -6,7 +6,7 @@ const Transactions = require("../Model/Transaction");
 // Function to get Transactions
 const getTransactions = async (req, res) => {
   try {
-    const transactions = await Transaction.find();
+    const transactions = await Transactions.find();
 
     return res.status(200).json({
       success: true,
@@ -24,7 +24,7 @@ const addTransactions = async (req, res) => {
   try {
     const { text, amount } = req.body;
 
-    const transaction = await Transaction.create(req.body);
+    const transaction = await Transactions.create(req.body);
 
     return res.status(201).json({
       success: true,
@@ -33,7 +33,6 @@ const addTransactions = async (req, res) => {
   } catch (err) {
     if (err.name === "ValidationError") {
       const messages = Object.values(err.errors).map((val) => val.message);
-
       return res.status(400).json({
         success: false,
         error: messages,
@@ -48,7 +47,7 @@ const addTransactions = async (req, res) => {
 };
 const deleteTransactions = async (req, res) => {
   try {
-    const transaction = await Transaction.findById(req.params.id);
+    const transaction = await Transactions.findById(req.params.id);
 
     if (!transaction) {
       return res.status(404).json({

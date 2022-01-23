@@ -2,16 +2,14 @@ import React, { useState, useRef, useEffect, useContext } from "react";
 import { BalanceStyled } from "./BalanceStyled";
 import pat from "./img/pattern.png";
 import ring from "./img/ring.png";
-import sims from "./img/ring.png";
-import gsap from "gsap";
 import animate, { tl } from "./animation";
 import { GlobalContext } from "../../Context/Context";
 
 const Balance = () => {
-  const [watch, setWatch] = useState(false);
+  const [watch] = useState(false);
   // const tl = gsap.timeline({ paused: true, reversed: true });
   const container = useRef(null);
-  const sim = useRef(null);
+
   const cLogo = useRef(null);
   const logo = useRef(null);
   const balance = useRef(null);
