@@ -10,10 +10,11 @@ export const HomeStyled = styled.main`
   }
   @media (max-width: ${({ theme }) => theme.blogNav}) {
     height: 100vh;
-    padding-top: 6rem;
+    padding-top: 4rem;
   }
   .hero {
     display: flex;
+    height: 100%;
     /* justify-content: space-between; */
     /* align-items: center; */
     position: relative;
@@ -24,6 +25,7 @@ export const HomeStyled = styled.main`
     }
     &-left {
       width: 40%;
+      height: 100%;
       position: relative;
       @media (max-width: ${({ theme }) => theme.mind}) {
         width: 60%;
@@ -48,8 +50,9 @@ export const HomeStyled = styled.main`
         margin: 0 auto;
       } */
       img {
-        mix-blend-mode: difference;
+        /* mix-blend-mode: difference; */
         width: 400px;
+        height: 100%;
         position: relative;
         @media (max-width: ${({ theme }) => theme.mind}) {
           width: 400px;
@@ -69,11 +72,11 @@ export const HomeStyled = styled.main`
           width: 190px;
         }
         @media screen and (max-width: 375px) and (max-height: 812px) {
-          width: 210px;
-          top: 50px;
+          width: 200px;
+          top: 30px;
         }
         @media screen and (max-width: 375px) and (max-height: 667px) {
-          width: 170px;
+          width: 160px;
         }
         @media (min-width: ${({ theme }) => theme.auth}) {
           width: 2000px;
@@ -255,6 +258,7 @@ export const HomeStyled = styled.main`
         @media (min-width: ${({ theme }) => theme.auth}) {
           top: 40%;
         }
+
         /* width: 60%; */
         .view {
           border-radius: 1.5rem;
@@ -279,7 +283,7 @@ export const HomeStyled = styled.main`
         }
         .track {
           margin-left: 0.63rem;
-          font-size: 0.875rem;
+          font-size: 0.8125rem;
           @media (max-width: ${({ theme }) => theme.images}) {
             font-size: 0.75rem;
           }

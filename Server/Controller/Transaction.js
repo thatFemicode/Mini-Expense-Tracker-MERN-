@@ -20,6 +20,8 @@ const getTransactions = async (req, res) => {
     });
   }
 };
+// Function to add Transactions
+
 const addTransactions = async (req, res) => {
   try {
     const { text, amount } = req.body;
@@ -45,6 +47,8 @@ const addTransactions = async (req, res) => {
     }
   }
 };
+// Function to delete Transactions
+
 const deleteTransactions = async (req, res) => {
   try {
     const transaction = await Transactions.findById(req.params.id);

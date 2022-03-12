@@ -31,25 +31,14 @@ export const NavbarStyled = styled.nav`
       @media screen and (min-height: 100px) and (max-height: 600px) and (max-width: 1024px) {
         width: 65px;
       }
+      @media (max-width: ${({ theme }) => theme.max}) {
+        width: 40px;
+      }
     }
     .mid-nav {
       transition: all 0.2s ease-in-out;
       @media (max-width: ${({ theme }) => theme.images}) {
         display: none;
-      }
-    }
-    .hashtag {
-      margin-top: 1rem;
-      display: flex;
-      align-items: center;
-      /* @media (max-width: ${({ theme }) => theme.images}) {
-        display: none;
-      } */
-      button {
-        display: flex;
-        align-items: center;
-        background: transparent;
-        border: none;
       }
     }
   }
